@@ -27,6 +27,12 @@ function App() {
         <input {...register("exampleRequired", { required: true })} />
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
+        <div>
+          <input {...register("add[0]")} />
+          <input {...register("add[1]")} />
+          <input {...register("add[2]")} />
+          <input {...register("add[3]")} />
+        </div>
 
         <input type="submit" />
       </form>
