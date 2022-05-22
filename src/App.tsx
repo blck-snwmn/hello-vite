@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 function App() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = handleSubmit(data => console.log(data));
 
   console.log(watch("example"));
 
@@ -19,7 +19,7 @@ function App() {
           </button>
         </p>
       </header>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={onSubmit}>
         {/* register your input into the hook by invoking the "register" function */}
         <input defaultValue="test" {...register("example")} />
 
